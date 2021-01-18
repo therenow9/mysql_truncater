@@ -20,7 +20,6 @@ from mysql.connector import connection
 
 
 global truncate_table;
-truncate_table="deploy.truncation_log";
 #global variables
 
 # database file located dat_converter/database file
@@ -29,6 +28,7 @@ deploy_db_user = user = config.get('user')
 deploy_db_pass = config.get('password');
 deploy_db_host = config.get('host');
 config=python_config.read_db_config('config.ini','db_truncate');
+truncate_table=config.get('truncate_table');
 temp=config.get('values');
 #get dbtables as array
 db_values=temp.split(',');
